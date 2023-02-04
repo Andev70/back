@@ -4,10 +4,13 @@ const colors = require("colors");
 const DBconnect = require("./db/connect");
 const users = require("./routes/routes.js");
 const contact = require("./routes/routes.js");
+const cors = require("cors");
+const addPost = require("./routes/post-route.js");
 require("dotenv").config();
 const PORT = process.env.PORT_SERV || 8080;
 
 // middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.static("./public"));
 
@@ -25,4 +28,5 @@ const startConn = async () => {
 startConn();
 
 // methods
+app.use("/api/v1/posts", addPost);
 app.use("/api/v1/users", users);

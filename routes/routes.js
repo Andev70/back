@@ -4,9 +4,13 @@ const {
   getAllUser,
   createUser,
   getUser,
+  deleteUser,
 } = require("../controllers/control.js");
 
-// routes
+//user routes
 router.route("/").get(getAllUser).post(createUser);
-router.route("/:id").get(getUser);
+router.route("/:id").get(getUser).delete(deleteUser);
+
 module.exports = router;
+
+// post routes
