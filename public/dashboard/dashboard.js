@@ -14,7 +14,7 @@ const getUser = async () => {
     console.log(e);
   }
 };
-getUser().then((res) => console.log(res));
+//getUser().then((res) => console.log(res));
 
 const postsGet = async () => {
   try {
@@ -28,14 +28,17 @@ const postsGet = async () => {
     console.log(e);
   }
 };
-postsGet().then((res) => console.log(res));
+//postsGet().then((res) => console.log(res));
 
 const createPost = async () => {
   try {
     const res = await fetch("/api/v1/posts", {
       method: "POST",
-      headers: { Accept: 'application/json',
-            'Content-Type': 'application/json',"authorization": authToken },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        authorization: authToken,
+      },
       body: JSON.stringify({ caption: caption.value, likes: 30 }),
     });
     const data = res.json();

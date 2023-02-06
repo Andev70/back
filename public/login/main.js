@@ -26,7 +26,7 @@ const asyncPostCall = async () => {
 login.addEventListener("click", (e) => {
   e.preventDefault();
   asyncPostCall().then((res) => {
-    // console.log(res);
+     console.log(res);
     if (res.msg === "login successful") {
       const token = res.token;
 

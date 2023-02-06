@@ -24,7 +24,7 @@ const createAccount = async () => {
 signup.addEventListener("click", (e) => {
   e.preventDefault();
   createAccount().then((res) => {
-    // console.log(res.msg[0]);
+     console.log(res.msg[0]);
 
     if (res.msg[0] === "your account has been created") {
       console.log("got one");
