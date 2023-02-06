@@ -7,6 +7,8 @@ const postSchema = new mongoose.Schema({
   },
   caption: {
     type: String,
+    trim: true,
+    required: [true, "please provide a caption"],
   },
   likes: {
     type: Number,

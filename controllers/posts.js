@@ -1,5 +1,6 @@
 const Post = require("../models/post.js");
-
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 // get posts
 
 const getAllPosts = async (req, res) => {
@@ -14,6 +15,9 @@ const getAllPosts = async (req, res) => {
 // create post
 const createPost = async (req, res) => {
   try {
+    const token = req.headers.authorization
+    const jwtcode = jwt.verify(token,process.env.JWT_SECRET   )
+    req.body.user=jwtcode.id
     const post = await Post.create(req.body);
     res.status(201).json({ post });
   } catch (e) {
