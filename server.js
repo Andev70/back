@@ -12,8 +12,9 @@ const PORT = process.env.PORT_SERV || 8080;
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use("/signup",express.static("./public"));
-
+app.use("/login", express.static("./public/login"));
+app.use("/signup", express.static("./public/signup"));
+app.use("/dashboard", express.static("./public/dashboard"));
 // connect to db start server
 const startConn = async () => {
   try {
