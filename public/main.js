@@ -90,10 +90,10 @@ const getUser = async () => {
   }
 };
 
-getBtn.addEventListener("click", () => {
+// getBtn.addEventListener("click", () => {
 
-  getUser().then((res) => console.log(res));
-});
+//   getUser().then((res) => console.log(res));
+// });
 
 const postSt = async () => {
   try {
@@ -119,9 +119,9 @@ const postSt = async () => {
   }
 };
 
-// getBtn.addEventListener("click", () => {
+getBtn.addEventListener("click", () => {
 //   //   console.log("ok");
 //   const obj = { name: "anupal" };
 
-//   postSt().then((res) => console.log(res));
-// });
+  postSt().then((res) => console.log(res));
+});
