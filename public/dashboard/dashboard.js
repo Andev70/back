@@ -33,8 +33,9 @@ postsGet().then((res) => console.log(res));
 const createPost = async () => {
   try {
     const res = await fetch("/api/v1/posts", {
-      method: "GET",
-      headers:{authorization:authToken},
+      method: "POST",
+      headers: { Accept: 'application/json',
+            'Content-Type': 'application/json',"authorization": authToken },
       body: JSON.stringify({ caption: caption.value, likes: 30 }),
     });
     const data = res.json();
